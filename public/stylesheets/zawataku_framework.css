@@ -207,10 +207,10 @@ input[type="reset"] {
     padding: 10px 15px;
     font-size: 16px;
     border-radius: 25px;
-    border: 2px solid #ddd;
-    background-color: #FF8A65;
+    border: 2px solid #FF5722;
+    background-color: #FFF;
     box-sizing: border-box;
-    color: #FFF;
+    color: #FF5722;
     cursor: pointer;
 }
 
@@ -218,6 +218,25 @@ input[type="button"]:hover,
 input[type="submit"]:hover,
 input[type="reset"]:hover {
     background-color: #FF5722;
+    color: #FFF;
+    transition: all 1s ease 0s;
+}
+
+button {
+    margin: 5px 0 5px 0;
+    padding: 10px 15px;
+    font-size: 16px;
+    border-radius: 25px;
+    border: 2px solid #FF5722;
+    background-color: #FFF;
+    box-sizing: border-box;
+    color: #FF5722;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color: #FF5722;
+    color: #FFF;
     transition: all 1s ease 0s;
 }
 
@@ -302,23 +321,6 @@ input[type=radio]:checked+.radio:before {
 
 input[type=checkbox]:checked+.checkbox:before {
     opacity: 1;
-}
-
-button {
-    margin: 5px 0 5px 0;
-    padding: 10px 15px;
-    font-size: 16px;
-    border-radius: 25px;
-    border: 2px solid #ddd;
-    background-color: #FF8A65;
-    box-sizing: border-box;
-    color: #FFF;
-    cursor: pointer;
-}
-
-button:hover {
-    background-color: #FF5722;
-    transition: all 1s ease 0s;
 }
 
 
