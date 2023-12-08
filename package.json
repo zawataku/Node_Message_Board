@@ -6,8 +6,11 @@
     "start": "node ./bin/www"
   },
   "dependencies": {
+    "@material/material-color-utilities": "^0.2.7",
+    "@material/web": "^1.0.1",
     "cookie-parser": "~1.4.6",
     "debug": "~4.3.4",
+    "ejs": "^3.1.9",
     "express": "~4.18.2",
     "http-errors": "~2.0.0",
     "jade": "~1.11.0",
