@@ -5,29 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Node掲示板</title>
-    <link rel="stylesheet" href="/stylesheets/zawataku_framework.css">
     <link rel="stylesheet" href="/stylesheets/index.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js" crossorigin="anonymous"></script>
-    <script src="/javascript/fade.js"></script>
+    <script type="module" src="/javascript/commom.js"></script>
 </head>
 
-<body class="fadeout">
-    <div class="column">
-        <div class="column-left-wide"><img src="/img/top_img.jpg" alt="トップ画像"></div>
-        <div class="column-right-narrow">
-            <div class="welcome-message border-bottom">
-                <h1>Welcome to KIT Message Board</h1>
-            </div>
-            <div class="registration">
-                <h3>今すぐ参加しましょう</h3>
-                <input type="button" class="w-75-pct" value="新規登録" onclick="location.href='/views/registration.ejs'">
-            </div>
-            <div class="login">
-                <h3>アカウントをお持ちの方は</h3>
-                <input type="button" class="w-75-pct" value="ログイン" onclick="location.href='/views/login.ejs'">
-            </div>
-        </div>
-    </div>
+<body>
+    <div class="welcome-menu"></div>
 </body>
 
 </html>
