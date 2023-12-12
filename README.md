@@ -1,26 +1,36 @@
-# Node_Message_Board
+This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
-## 概要
-授業の最終課題で制作したネット掲示板っぽいものです．Node.jsで書きます．
+## Getting Started
 
-## 実装したい機能
-- メッセージを入力し，投稿する機能
+First, run the development server:
 
-- 画像を投稿する機能
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- ニックネームを登録し，投稿名にする機能
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-- 各ニックネームごとにメッセージを保存しておく機能
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- ユーザ混在で新しい順にメッセージを表示できる機能 (某青い鳥SNSのタイムラインみたいな感じ)
+This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
 
-- 24時間経つと再ログインを要求する機能 (セッションタイムアウト的な)
+## Learn More
 
-- パスワード認証機能
+To learn more about Next.js, take a look at the following resources:
 
-- パスワードのハッシュ化
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- いいね機能
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
 
-## その他
-- [自作CSSフレームワーク](https://www.github.com/zawataku/zawataku_framework)を使いたい
+## Deploy on Vercel
+
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
