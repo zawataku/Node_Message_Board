@@ -1,16 +1,20 @@
-import React from 'react';
-import Header from '../components/Header';
-import Footer from '../components/Footer';
+import React, { useState } from 'react';
+import Login from '@/components/login';
+import SignUp from '@/components/signup';
 
 const Home = () => {
+  const [isLogin, setIsLogin] = useState(true);
+
+  const handleToggle = () => {
+    setIsLogin(!isLogin);
+  };
+
   return (
-    <div className="container mx-auto min-h-screen flex flex-col items-center justify-center">
-      <Header />
-      <main className="flex-1 flex-col items-center justify-center">
-        <h1 className="text-3xl font-bold mb-4">Welcome to Next.js!!!</h1>
-        <p className="text-base text-gray-600">This is a simple home page.</p>
-      </main>
-      <Footer />
+    <div className="flex h-screen">
+      <div className="hidden lg:flex items-center justify-center flex-1 bg-gray-100">
+        <img src="./img/PXL_20230728_051830441.jpg" alt="LC" className='w-full h-full object-cover' />
+      </div>
+      {isLogin ? <Login onToggle={handleToggle} /> : <SignUp onToggle={handleToggle} />}
     </div>
   );
 };
