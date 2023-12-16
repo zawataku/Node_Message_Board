@@ -1,22 +1,24 @@
-import React, { useState } from 'react';
-import Login from '@/components/login';
-import SignUp from '@/components/signup';
+import React from "react";
+import Link from "next/link";
 
-const Home = () => {
-  const [isLogin, setIsLogin] = useState(true);
-
-  const handleToggle = () => {
-    setIsLogin(!isLogin);
-  };
-
+export const Home = () => {
   return (
-    <div className="flex h-screen">
-      <div className="hidden lg:flex items-center justify-center flex-1 bg-gray-100">
-        <img src="./img/PXL_20230728_051830441.jpg" alt="LC" className='w-full h-full object-cover' />
+    <div className="bg-[url('/img/kv_3.jpg')] flex items-center justify-center min-h-screen relative z-10 bg-center bg-cover">
+      <div className="card w-96 bg-[#ffffff]/60 shadow-xl">
+        <figure className="px-10 pt-10">
+          <img src="./img/kit_english.png" alt="Shoes" className="rounded-xl" />
+        </figure>
+        <div className="card-body items-center text-center">
+          <h2 className="card-title">KIT Message Boardにようこそ！</h2>
+          <p>今すぐ参加しましょう</p>
+          <div className="card-actions">
+            <Link href="/signup">
+              <button className="btn btn-neutral">Join Us</button>
+            </Link>
+          </div>
+        </div>
       </div>
-      {isLogin ? <Login onToggle={handleToggle} /> : <SignUp onToggle={handleToggle} />}
     </div>
   );
 };
-
 export default Home;
