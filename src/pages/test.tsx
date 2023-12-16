@@ -1,15 +1,14 @@
-import 
 import { PrismaClient } from '@prisma/client';
 
 const prisma = new PrismaClient();
 
-export default function Home({ users }) {
+export default function Home({ data }) {
   return (
     <div>
-      <h1>Users</h1>
+      <h1>Dummy Data</h1>
       <ul>
-        {users.map((user) => (
-          <li key={user.id}>{user.name}</li>
+        {data.map((item) => (
+          <li key={item.id}>{item.field1}</li>
         ))}
       </ul>
     </div>
@@ -17,10 +16,10 @@ export default function Home({ users }) {
 }
 
 export async function getStaticProps() {
-  const users = await prisma.user.findMany();
+  const data = await prisma.modelName.findMany();
   return {
     props: {
-      users,
+      data,
     },
   };
 }

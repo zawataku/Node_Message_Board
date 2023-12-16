@@ -1,4 +1,5 @@
 import React from "react";
+import Link from "next/link";
 
 const SignUp = () => {
     return (
@@ -23,7 +24,7 @@ const SignUp = () => {
                             </div>
                         </form>
                         <div className="mt-4 text-sm text-gray-600 text-center">
-                            <p>アカウントをお持ちですか？ <a href="#" className="text-blue-600 hover:underline">ログイン</a></p>
+                        <p>アカウントをお持ちですか？ <Link href="/login" className="text-blue-600 hover:underline leading-10">ログイン</Link></p>
                         </div>
                     </div>
                 </div>
