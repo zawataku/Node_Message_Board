@@ -26,6 +26,9 @@ const Login: React.FC<LoginProps> = ({ onToggle }) => {
                 <div className="mt-4 text-sm text-gray-600 text-center">
                     <p>アカウントをお持ちではないですか？ <a href="#" className="text-blue-600 hover:underline" onClick={onToggle}>アカウントを新規作成</a></p>
                 </div>
+                <div className="mt-4 text-sm text-gray-600 text-center">
+                    <p><a href="" className="text-blue-600 hover:underline">テストページに以降</a></p>
+                </div>
             </div>
         </div>
     );
