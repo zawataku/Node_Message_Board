@@ -1,15 +1,26 @@
-import { FC } from "react";
-import { Link } from "react-router-dom";
+import 
+import { PrismaClient } from '@prisma/client';
 
-export const Test : FC = () => {
+const prisma = new PrismaClient();
+
+export default function Home({ users }) {
   return (
     <div>
-      <h1>Top Page</h1>
-      <p>
-        <Link to="/page1">Page 1</Link>
-      </p>
+      <h1>Users</h1>
+      <ul>
+        {users.map((user) => (
+          <li key={user.id}>{user.name}</li>
+        ))}
+      </ul>
     </div>
   );
-};
+}
 
-export default Test;
+export async function getStaticProps() {
+  const users = await prisma.user.findMany();
+  return {
+    props: {
+      users,
+    },
+  };
+}
