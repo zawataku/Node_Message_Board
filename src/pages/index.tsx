@@ -10,7 +10,7 @@ export const Home = () => {
         </figure>
         <div className="card-body items-center text-center">
           <h2 className="card-title">KIT Message Boardにようこそ！</h2>
-          <p>今すぐ参加しましょう</p>
+          <p className="leading-10">今すぐ参加しましょう</p>
           <div className="card-actions">
             <Link href="/signup">
               <button className="btn btn-neutral">Join Us</button>

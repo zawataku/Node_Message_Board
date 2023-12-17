@@ -10,4 +10,5 @@
 * {
     font-family: MPLUSRounded1c-Bold;
     font-weight: inherit;
+    transform: rotateZ(0.03deg);
 }

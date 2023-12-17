@@ -7,7 +7,7 @@ const SignUp = () => {
             <div className="card w-96 bg-[#ffffff]/60 shadow-xl">
                 <div className="card-body items-center text-center">
                     <div className="max-w-md w-full p-6">
-                        <h1 className="text-3xl font-semibold mb-6 text-black text-center">新規登録</h1>
+                        <h1 className="text-3xl font-semibold mb-6 text-black text-center">ログイン</h1>
                         <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">Welcome to KIT Message Borad</h1>
                         <form action="#" method="POST" className="space-y-4">
                             <div>
