@@ -11,10 +11,10 @@ const SignUp = () => {
                         <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">Welcome to KIT Message Borad</h1>
                         <form action="#" method="POST" className="space-y-4">
                             <div>
-                                <input type="text" id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" />
+                                <input type="text" required id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" />
                             </div>
                             <div>
-                                <input type="password" id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" />
+                                <input type="password" required id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" />
                             </div>
                             <div>
                                 <button type="submit" className="w-full btn btn-neutral">ログイン</button>
