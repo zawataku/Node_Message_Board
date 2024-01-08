@@ -1,7 +1,34 @@
 import React from "react";
 import Link from "next/link";
+import { useState } from "react";
+import { useRouter } from "next/router";
 
-const SignUp = () => {
+const Login = () => {
+    const [mail, setMail] = useState('');
+    const [pass, setPass] = useState('');
+    const router = useRouter();
+
+    const handleLogin = async () => {
+        try {
+            const response = await fetch('/api/login-api', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({ mail, pass }),
+            });
+
+            if (response.ok) {
+                console.log('ログインに成功しました');
+                router.push('/home');
+            } else {
+                console.log('ログインに失敗しました');
+            }
+        } catch (error) {
+            console.error('エラーが発生しました:', error);
+        }
+    };
+
     return (
         <div className="bg-[url('/img/kv_3.jpg')] flex items-center justify-center min-h-screen relative z-10 bg-center bg-cover">
             <div className="card w-96 bg-[#ffffff]/60 shadow-xl">
@@ -11,13 +38,13 @@ const SignUp = () => {
                         <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">Welcome to KIT Message Borad</h1>
                         <form action="#" method="POST" className="space-y-4">
                             <div>
-                                <input type="text" required id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" />
+                                <input type="text" required id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" value={mail} onChange={(e) => setMail(e.target.value)} />
                             </div>
                             <div>
-                                <input type="password" required id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" />
+                                <input type="password" required id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" value={pass} onChange={(e) => setPass(e.target.value)} />
                             </div>
                             <div>
-                                <button type="submit" className="w-full btn btn-neutral">ログイン</button>
+                                <button type="button" onClick={handleLogin} className="w-full btn btn-neutral">ログイン</button>
                             </div>
                         </form>
                         <div className="mt-4 text-sm text-gray-600 text-center">
@@ -30,4 +57,4 @@ const SignUp = () => {
         </div>
     );
 };
-export default SignUp;
+export default Login;

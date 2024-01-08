@@ -11,6 +11,7 @@ const Users = ({ users }) => {
         <div className="card-body items-center text-center">
           <div className="max-w-md p-6">
             <h1 className="text-3xl font-semibold mb-6 text-black text-center">ユーザーリスト</h1>
+            <p><Link href="/home" className="text-blue-600 hover:underline leading-10">ホーム</Link></p>
             <table className="table table-sm items-center justify-center">
               <thead>
                 <tr>

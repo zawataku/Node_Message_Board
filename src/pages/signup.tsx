@@ -5,13 +5,13 @@ import { useState } from "react";
 const SignUp = () => {
     const [username, setUsername] = useState('');
     const [mail, setMail] = useState('');
-    const [pass, setPassword] = useState('');
+    const [pass, setPass] = useState('');
 
     const handleSignup = async (e) => {
         e.preventDefault();
 
         try {
-            const response = await fetch('/api/signup', {
+            const response = await fetch('/api/signup-api', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -45,7 +45,7 @@ const SignUp = () => {
                                 <input type="text" required id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" value={mail} onChange={(e) => setMail(e.target.value)} />
                             </div>
                             <div>
-                                <input type="password" required id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" value={pass} onChange={(e) => setPassword(e.target.value)} />
+                                <input type="password" required id="password" placeholder="パスワード" className="input input-bordered w-full max-w-xs" value={pass} onChange={(e) => setPass(e.target.value)} />
                             </div>
                             <div>
                                 <button type="submit" className="w-full btn btn-neutral">Sign Up</button>
