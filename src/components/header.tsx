@@ -1,6 +1,17 @@
 import React from "react";
+import { useRouter } from "next/router";
 
 const Header = () => {
+    const router = useRouter();
+
+    const handleLogout = () => {
+        // Cookieを削除
+        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+        // ログアウト後のリダイレクト先を指定
+        router.push('/');
+    };
+
     return (
         <div className="navbar bg-base-100 sticky top-0">
             <div className="navbar-start">
@@ -15,7 +26,7 @@ const Header = () => {
                     </div>
                     <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
                         <li><a>設定</a></li>
-                        <li><a>ログアウト</a></li>
+                        <li><a  onClick={handleLogout}>ログアウト</a></li>
                     </ul>
                 </div>
             </div>

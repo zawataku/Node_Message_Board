@@ -6,6 +6,8 @@ import { useRouter } from "next/router";
 const Login = () => {
     const [mail, setMail] = useState('');
     const [pass, setPass] = useState('');
+    const [error, setError] = useState('');
+
     const router = useRouter();
 
     const handleLogin = async () => {
@@ -19,10 +21,18 @@ const Login = () => {
             });
 
             if (response.ok) {
+                const userData = await response.json();
+                const { username } = userData;
+
+                // ユーザー名をCookieに保存
+                document.cookie = `username=${username}; path=/`;
+
                 console.log('ログインに成功しました');
+                console.log(username);
                 router.push('/home');
             } else {
                 console.log('ログインに失敗しました');
+                setError('メールアドレスまたはパスワードが違います．');
             }
         } catch (error) {
             console.error('エラーが発生しました:', error);
@@ -37,6 +47,7 @@ const Login = () => {
                         <h1 className="text-3xl font-semibold mb-6 text-black text-center">ログイン</h1>
                         <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">Welcome to KIT Message Borad</h1>
                         <form action="#" method="POST" className="space-y-4">
+                            {error && <p style={{ color: 'red' }}>{error}</p>}
                             <div>
                                 <input type="text" required id="email" placeholder="メールアドレス" className="input input-bordered w-full max-w-xs" value={mail} onChange={(e) => setMail(e.target.value)} />
                             </div>
