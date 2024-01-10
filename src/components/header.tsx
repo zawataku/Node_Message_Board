@@ -19,7 +19,7 @@ const Header = () => {
             <div className="navbar-start">
             </div>
             <div className="navbar-center">
-                <a className="btn btn-ghost text-xl">KIT Message Board</a>
+                <a className="btn btn-ghost text-2xl">KIT Message Board</a>
             </div>
             <div className="navbar-end">
                 <div className="dropdown dropdown-end">

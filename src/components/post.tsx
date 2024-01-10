@@ -4,6 +4,16 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const Post = ({ posts }) => {
+    const handleLike = async (postId) => {
+        // サーバーにいいねカウントを更新するためのリクエストを送信
+        await fetch(`/api/${postId}`, {
+            method: 'POST',
+        });
+
+        // いいねカウントを更新した後にページをリロード
+        window.location.reload();
+    };
+
     if (!posts) {
         return <p>データがありません。</p>;
     }
@@ -25,6 +35,14 @@ const Post = ({ posts }) => {
                                 <td>{post.username}</td>
                                 <td>{post.post}</td>
                                 <td>{new Date(post.createdAt).toLocaleString()}</td>
+                                <td>
+                                    <button
+                                        className="btn btn-neutral"
+                                        type="button"
+                                        onClick={() => handleLike(post.id)}>
+                                        いいね！ {post.like}
+                                    </button>
+                                </td>
                             </tr>
                         ))}
                     </tbody>
