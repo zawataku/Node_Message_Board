@@ -3,6 +3,7 @@ import React from "react";
 import Header from "@/components/header";
 import Sidebar from "@/components/sidebar";
 import Form from "@/components/form";
+import Post from "@/components/post";
 
 const Home = () => {
     return (
@@ -12,7 +13,10 @@ const Home = () => {
 
             <div className="flex">
                 <Sidebar></Sidebar>
-                <Form></Form>
+                <div className="flex-col w-10/12">
+                    <Form></Form>
+                    <Post></Post>
+                </div>
             </div>
         </div>
     );
