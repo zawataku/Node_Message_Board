@@ -8,6 +8,7 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 const Home = ({ posts }) => {
+    
     return (
         <div className="bg-[url('/img/kv_3.jpg')] items-center justify-center min-h-screen relative z-10 bg-center bg-cover">
             <Header></Header>
@@ -25,18 +26,23 @@ const Home = ({ posts }) => {
 // ビルド時にデータを取得
 export async function getStaticProps() {
     try {
-        const posts = await prisma.posts.findMany(
-            {
-                orderBy: [
-                    {
-                        id: 'desc'
-                    },
-                ],
-            }
-        );
+        const posts = await prisma.posts.findMany({
+            orderBy: [
+                {
+                    id: 'desc'
+                },
+            ],
+        });
+
+        // createdAtを文字列に変換
+        const formattedPosts = posts.map(post => ({
+            ...post,
+            createdAt: post.createdAt.toISOString(),
+        }));
+
         return {
             props: {
-                posts,
+                posts: formattedPosts,
             },
         };
     } catch (error) {

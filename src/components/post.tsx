@@ -5,7 +5,7 @@ const prisma = new PrismaClient();
 
 const Post = ({ posts }) => {
     if (!posts) {
-        return <p>何か投稿してみましょう</p>;
+        return <p>データがありません。</p>;
     }
 
     console.log(posts);
@@ -24,6 +24,7 @@ const Post = ({ posts }) => {
                                 </td>
                                 <td>{post.username}</td>
                                 <td>{post.post}</td>
+                                <td>{new Date(post.createdAt).toLocaleString()}</td>
                             </tr>
                         ))}
                     </tbody>
@@ -43,9 +44,15 @@ export async function getStaticProps() {
         ],
     });
 
+    // createdAtを文字列に変換
+    const formattedPosts = posts.map(post => ({
+        ...post,
+        createdAt: post.createdAt.toISOString(),
+    }));
+
     return {
         props: {
-            posts,
+            posts: formattedPosts,
         },
     };
 }

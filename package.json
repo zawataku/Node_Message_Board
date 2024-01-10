@@ -18,7 +18,8 @@
     "react": "^18",
     "react-dom": "^18",
     "react-router-dom": "^6.21.0",
-    "sqlite3": "^5.1.6"
+    "sqlite3": "^5.1.6",
+    "ws": "^8.16.0"
   },
   "devDependencies": {
     "@types/node": "^20",

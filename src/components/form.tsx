@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import { getSession } from 'next-auth/react';
 
-export default function Form({}) {
+export default function Form({ }) {
     const [postContent, setPostContent] = useState('');
 
     const handlePostSubmit = async () => {
@@ -30,12 +30,12 @@ export default function Form({}) {
     return (
         <div className="card w-10/12 h-28 bg-base-100 shadow-xl m-10">
             <div className="card-body flex">
-                <div className="form-wrap flex justify-center">
-                    <input type="text" placeholder="今なにしてる？" className="input input-bordered w-full max-w-3xl flex" value={postContent} onChange={(e) => setPostContent(e.target.value)} />
-                    <div className="card-actions ml-3">
-                        <button className="btn btn-neutral" type="button" onClick={handlePostSubmit}>投稿</button>
-                    </div>
-                </div>
+                <form className="form-wrap flex justify-center" onSubmit={handlePostSubmit}>
+                        <input type="text" required placeholder="今なにしてる？" className="input input-bordered w-full max-w-3xl flex" value={postContent} onChange={(e) => setPostContent(e.target.value)} />
+                        <div className="card-actions ml-3">
+                            <button className="btn btn-neutral" type="submit" onClick={() => window.location.reload()}>投稿</button>
+                        </div>
+                </form>
             </div>
         </div>
     );
