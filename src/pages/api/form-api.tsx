@@ -3,11 +3,10 @@ import { PrismaClient } from '@prisma/client';
 const prisma = new PrismaClient();
 
 export default async function handler(req, res) {
-  // POSTリクエストからデータを取得
   const { postContent } = req.body;
 
   // ブラウザのcookieからユーザー名を取得
-  const username = req.cookies.username; // ここでcookieの名前を実際の名前に変更してください
+  const username = req.cookies.username;
 
   if (!username) {
     return res.status(401).json({ error: 'Unauthorized' });
@@ -25,7 +24,7 @@ export default async function handler(req, res) {
       },
     });
 
-    res.status(201).json({ message: 'Post created successfully', post: createdPost });
+    res.status(201).json({ message: '投稿が完了しました', post: createdPost });
   } catch (error) {
     console.error('投稿エラー:', error);
     res.status(500).json({ error: 'Internal Server Error' });

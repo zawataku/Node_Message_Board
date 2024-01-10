@@ -18,25 +18,25 @@ const Sidebar = () => {
     }, []);
 
     // 時計の処理
-    const [currentTime, setCurrentTime] = useState(new Date());
-    useEffect(() => {
-        const intervalId = setInterval(() => {
-            setCurrentTime(new Date());
-        }, 1);
-        return () => clearInterval(intervalId);
-    }, []);
+    // const [currentTime, setCurrentTime] = useState(new Date());
+    // useEffect(() => {
+    //     const intervalId = setInterval(() => {
+    //         setCurrentTime(new Date());
+    //     }, 1);
+    //     return () => clearInterval(intervalId);
+    // }, []);
 
-    const options = {
-        year: 'numeric',
-        month: '2-digit',
-        day: '2-digit',
-        hour: '2-digit',
-        minute: '2-digit',
-        second: '2-digit',
-        fractionalSecondDigits: 3,
-    } as const;
+    // const options = {
+    //     year: 'numeric',
+    //     month: '2-digit',
+    //     day: '2-digit',
+    //     hour: '2-digit',
+    //     minute: '2-digit',
+    //     second: '2-digit',
+    //     fractionalSecondDigits: 3,
+    // } as const;
 
-    const formattedTime = new Intl.DateTimeFormat('ja-JP', options).format(currentTime);
+    // const formattedTime = new Intl.DateTimeFormat('ja-JP', options).format(currentTime);
 
     return (
         <div className='sidebar-wrap'>
@@ -57,7 +57,7 @@ const Sidebar = () => {
                         <p>現在時刻</p>
                     </div>
                     <div className="clock text-base">
-                        <p>{formattedTime}</p>
+                        {/* <p>{formattedTime}</p> */}
                     </div>
                 </div>
             </div>
