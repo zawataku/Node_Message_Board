@@ -5,8 +5,9 @@ const Header = () => {
     const router = useRouter();
 
     const handleLogout = () => {
+
         // Cookieを削除
-        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+        document.cookie = 'username=; expires=Thu, 01 Jan 1970 00:00:00 UTC;';
 
         // ログアウト後のリダイレクト先を指定
         router.push('/');

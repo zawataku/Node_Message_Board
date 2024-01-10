@@ -60,7 +60,7 @@ const Login = () => {
                         </form>
                         <div className="mt-4 text-sm text-gray-600 text-center">
                             <p>アカウントをお持ちでない場合は<Link href="/signup" className="text-blue-600 hover:underline leading-10">登録</Link></p>
-                            <p><Link href="/test" className="text-blue-600 hover:underline leading-10">テストページに移行</Link></p>
+                            {/* <p><Link href="/test" className="text-blue-600 hover:underline leading-10">テストページに移行</Link></p> */}
                         </div>
                     </div>
                 </div>
