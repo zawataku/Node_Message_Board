@@ -6,6 +6,7 @@ const SignUp = () => {
     const [username, setUsername] = useState('');
     const [mail, setMail] = useState('');
     const [pass, setPass] = useState('');
+    const [signup, setSignup] = useState('');
 
     const handleSignup = async (e) => {
         e.preventDefault();
@@ -21,6 +22,7 @@ const SignUp = () => {
 
             if (response.ok) {
                 console.log('ユーザーが登録されました');
+                setSignup('ユーザー登録が完了しました');
             } else {
                 console.error('ユーザーの登録に失敗しました');
             }
@@ -38,6 +40,7 @@ const SignUp = () => {
                         <h1 className="text-3xl font-semibold mb-6 text-black text-center">新規登録</h1>
                         <h1 className="text-sm font-semibold mb-6 text-gray-500 text-center">Welcome to KIT Message Borad</h1>
                         <form action="#" method="POST" className="space-y-4" onSubmit={handleSignup}>
+                        {signup && <p style={{ color: 'green' }}>{signup}</p>}
                             <div>
                                 <input type="text" required id="username" placeholder="ユーザーネーム" className="input input-bordered w-full max-w-xs" value={username} onChange={(e) => setUsername(e.target.value)} />
                             </div>

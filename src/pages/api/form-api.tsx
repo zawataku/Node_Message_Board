@@ -25,6 +25,7 @@ export default async function handler(req, res) {
     });
 
     res.status(201).json({ message: '投稿が完了しました', post: createdPost });
+    window.location.reload();
   } catch (error) {
     console.error('投稿エラー:', error);
     res.status(500).json({ error: 'Internal Server Error' });

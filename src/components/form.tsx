@@ -17,6 +17,8 @@ export default function Form({ }) {
             if (response.ok) {
                 // ポストが正常に作成された場合の処理
                 console.log('Post created successfully');
+                window.location.reload();
+                
             } else {
                 // エラーが発生した場合の処理
                 console.error('投稿エラー:', response.statusText);
@@ -33,7 +35,7 @@ export default function Form({ }) {
                 <form className="form-wrap flex justify-center" onSubmit={handlePostSubmit}>
                         <input type="text" required placeholder="今なにしてる？" className="input input-bordered w-full max-w-3xl flex" value={postContent} onChange={(e) => setPostContent(e.target.value)} />
                         <div className="card-actions ml-3">
-                            <button className="btn btn-neutral" type="submit" onClick={() => window.location.reload()}>投稿</button>
+                            <button className="btn btn-neutral" type="submit">投稿</button>
                         </div>
                 </form>
             </div>
